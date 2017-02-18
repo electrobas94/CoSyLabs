@@ -9,11 +9,12 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
+    @Styles.Render("~/Content/css")
 </head>
 <body>
-    <div> 
-    </div>
+<div id="mainWindow">
+</div>
     <script src="~/Scripts/b4w.min.js"></script>
-    <script src="~/Scripts/App/app.js"></script>
+    @Scripts.Render("~/bundles/app")
 </body>
 </html>

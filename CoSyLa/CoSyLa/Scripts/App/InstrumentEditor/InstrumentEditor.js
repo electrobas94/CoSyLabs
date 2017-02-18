@@ -1,8 +1,7 @@
 var InstrumentEditor = (function () {
     function InstrumentEditor() {
-        document.write("sada");
+        this.w = new Widget(document.getElementById("mainWindow"));
     }
     return InstrumentEditor;
 }());
 var instrumentEditor = new InstrumentEditor();
-//# sourceMappingURL=app.js.map

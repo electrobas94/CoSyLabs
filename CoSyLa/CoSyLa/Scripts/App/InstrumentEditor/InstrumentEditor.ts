@@ -1,6 +1,8 @@
-﻿class InstrumentEditor {
+﻿class InstrumentEditor
+{
+	 w: Widget;
     constructor() {
-        document.write("sada");
+        this.w = new Widget(document.getElementById("mainWindow"));
     }
 }
 
