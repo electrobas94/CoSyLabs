@@ -9,6 +9,7 @@
   },
   "files": [
   "./InstrumentEditor/InstrumentEditor.ts",
-  "./Widgets/Widget.ts"
+  "./Widgets/Widget.ts",
+  "./Widgets/TabWidget.ts"
   ]
 }

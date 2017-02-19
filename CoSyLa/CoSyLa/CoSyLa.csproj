@@ -253,6 +253,7 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\App\InstrumentEditor\InstrumentEditor.ts" />
+    <TypeScriptCompile Include="Scripts\App\Widgets\TabWidget.ts" />
     <TypeScriptCompile Include="Scripts\App\Widgets\Widget.ts" />
   </ItemGroup>
   <ItemGroup>

@@ -1,6 +1,12 @@
 var InstrumentEditor = (function () {
     function InstrumentEditor() {
-        this.w = new Widget(document.getElementById("mainWindow"));
+        this.w = new TabWidget(document.getElementById("mainWindow"));
+        this.w.AddTab("bla bla");
+        this.w.AddTab("bla bla");
+        this.w.AddTab("bla bla");
+        this.w.AddTab("bla bla");
+        this.w.AddTab("bla bla");
+        this.w.SelectTab(2);
     }
     return InstrumentEditor;
 }());

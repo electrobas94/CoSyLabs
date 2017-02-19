@@ -12,5 +12,13 @@ html, body {
 	 margin:0px;
 	 height:100%;
 	 width:100%;
-	 background-color:darkslategrey;
+}
+
+.nav{
+	 padding-left:1%;
+	 padding-top:0.5%;
+}
+
+.nav li{
+	 cursor:pointer;
 }

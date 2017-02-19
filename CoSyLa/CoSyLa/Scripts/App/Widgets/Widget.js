@@ -5,7 +5,7 @@ var Widget = (function () {
         this._height = 100;
         this._horizontalPosition = 0;
         this._verticalPosition = 0;
-        this._defaultUnits = "px";
+        this._defaultUnits = "%";
         this._elementDom = this.Draw(parent);
         this.UpdateDomGeometry();
     }
@@ -22,7 +22,7 @@ var Widget = (function () {
         this._elementDom.style.display = "auto";
     };
     Widget.prototype.Hide = function () {
-        this._elementDom.style.display = "hidden";
+        this._elementDom.style.display = "none";
     };
     Widget.prototype.GetDom = function () {
         return this._elementDom;

@@ -12,7 +12,7 @@ class Widget
 	 protected _verticalPosition: number = 0;
 
 	 // Default measure units for size and position DOM element
-	 protected _defaultUnits: string = "px";
+	 protected _defaultUnits: string = "%";
 
 	 constructor(parent?: HTMLElement)
 	 {
@@ -40,7 +40,7 @@ class Widget
 
     Hide(): void
     {
-		  this._elementDom.style.display = "hidden";
+		  this._elementDom.style.display = "none";
     }
 
 	 GetDom(): HTMLElement
