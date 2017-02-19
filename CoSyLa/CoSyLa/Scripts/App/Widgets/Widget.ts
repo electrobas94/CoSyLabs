@@ -20,6 +20,10 @@ class Widget
 		  this.UpdateDomGeometry();
 	 }
 
+	 AddChildWidget(widget: Widget): void {
+		  this._elementDom.appendChild(widget.GetDom());
+	 }
+
     Draw(parent?: HTMLElement): HTMLElement
     {
 		  var widget = document.createElement("div");
