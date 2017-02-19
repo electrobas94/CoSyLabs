@@ -10,6 +10,7 @@
   "files": [
   "./InstrumentEditor/InstrumentEditor.ts",
   "./Widgets/Widget.ts",
-  "./Widgets/TabWidget.ts"
+  "./Widgets/TabWidget.ts",
+  "./Widgets/ButtonWidget.ts"
   ]
 }
