@@ -10,6 +10,7 @@ var Widget = (function () {
         this._lastEvent = null;
         this._onClick = function () { };
         this._elementDom = this.Draw(parent);
+        this.InitWidget();
         this._elementDom.addEventListener("click", function (event) {
             _this._lastEvent = event;
             _this._onClick();
@@ -77,6 +78,15 @@ var Widget = (function () {
         enumerable: true,
         configurable: true
     });
+    Object.defineProperty(Widget.prototype, "MeasureUnits", {
+        set: function (unitsType) {
+            if (!unitsType || unitsType.length > 2 || unitsType.length == 0)
+                return;
+            this._defaultUnits = unitsType;
+        },
+        enumerable: true,
+        configurable: true
+    });
     Object.defineProperty(Widget.prototype, "Text", {
         set: function (newText) {
             this._elementDom.innerText = newText;
@@ -98,6 +108,8 @@ var Widget = (function () {
             this._elementDom.style.width = this._width.toString() + this._defaultUnits;
             this._elementDom.style.height = this._height.toString() + this._defaultUnits;
         }
+    };
+    Widget.prototype.InitWidget = function () {
     };
     return Widget;
 }());

@@ -17,7 +17,6 @@ var InstrumentEditor = (function () {
         var toolBar = new ToolBarWidget();
         toolBar.AddToolGroup(butGroup);
         toolBar.AddToolGroup(butGroup2);
-        toolBar.Height = 4;
         this.w.AddWidgetOnTab(0, toolBar);
     }
     return InstrumentEditor;

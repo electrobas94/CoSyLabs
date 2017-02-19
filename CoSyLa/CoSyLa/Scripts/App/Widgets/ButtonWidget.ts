@@ -14,4 +14,11 @@
 
 		  return buttonWidget;
     }
+
+	 protected InitWidget(): void
+	 {
+		  this.MeasureUnits = "px";
+		  this.Height = 40;
+		  this.Width = 40;
+	 }
 };

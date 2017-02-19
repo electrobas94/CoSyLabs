@@ -18,6 +18,11 @@ var ButtonWidget = (function (_super) {
             document.body.appendChild(buttonWidget);
         return buttonWidget;
     };
+    ButtonWidget.prototype.InitWidget = function () {
+        this.MeasureUnits = "px";
+        this.Height = 40;
+        this.Width = 40;
+    };
     return ButtonWidget;
 }(Widget));
 ;

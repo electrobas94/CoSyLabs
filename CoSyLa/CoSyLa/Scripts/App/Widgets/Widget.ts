@@ -26,9 +26,10 @@ class Widget
 	 //
 	 // Public methods
 	 //
-	 constructor(parent?: HTMLElement) {
+	 constructor(parent?: HTMLElement)
+	 {
 		  this._elementDom = this.Draw(parent);
-		  //this.UpdateDomGeometry();
+		  this.InitWidget();
 
 		  this._elementDom.addEventListener("click",
 													 (event: Event) => {
@@ -134,5 +135,9 @@ class Widget
 				this._elementDom.style.width  = this._width.toString()  + this._defaultUnits;
 				this._elementDom.style.height = this._height.toString() + this._defaultUnits;
 		  }
+	 }
+
+	 protected InitWidget(): void
+	 {
 	 }
 };
