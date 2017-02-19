@@ -3,7 +3,7 @@
 	 protected countTabs:    number = -1;
 	 protected _selectIndex: number = -1;
 
-	 protected _tabsContent: HTMLElement[];
+	 protected _tabsContent: HTMLElement[] = new Array();
 
 	 AddWidgetOnTab(tabIndex: number, widget: Widget): void
 	 {
@@ -25,9 +25,6 @@
 		  let menuItem = this.NewMenuItem(title);
 		  this.NewTab();
 
-		  if (this.countTabs == 0)
-				this.SelectTab(0);
-
 		  // Closures for save index every tab 0, 1, 2, 3
 		  let onItemMenuClick = () => {
 				let index = this.countTabs;
@@ -36,6 +33,9 @@
 
 		  menuItem.addEventListener("click", onItemMenuClick(), false);
 		  menuTab.appendChild(menuItem);
+
+		  if (this.countTabs == 0)
+				this.SelectTab(0);
 	 }
 
 	 SelectTab(index: number): void
@@ -52,7 +52,7 @@
 		  }
 
 		  menuTab.children [index].classList.add("active");
-		  this._tabsContent[index].style.display = "auto";
+		  this._tabsContent[index].style.display = "block";
 
 		  this._selectIndex = index;
 		  
