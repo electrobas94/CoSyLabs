@@ -3,25 +3,42 @@
 */
 class Widget
 {
-    protected _elementDom: HTMLElement = null;
+	 //
+	 // Properties
+	 //
+	 protected _elementDom: HTMLElement = null;
 
 	 // Geometry properties
-	 protected _width: number = 100;
+	 protected _width:  number = 100;
 	 protected _height: number = 100;
 	 protected _horizontalPosition: number = 0;
-	 protected _verticalPosition: number = 0;
+	 protected _verticalPosition:   number = 0;
 
 	 // Default measure units for size and position DOM element
 	 protected _defaultUnits: string = "%";
 
-	 constructor(parent?: HTMLElement)
-	 {
+	 //
+	 // Action-properties
+	 //
+	 private _lastEvent: Event  = null;
+	 private _onClick: Function = () => {};
+
+	 //
+	 // Public methods
+	 //
+	 constructor(parent?: HTMLElement) {
 		  this._elementDom = this.Draw(parent);
-		  this.UpdateDomGeometry();
+		  //this.UpdateDomGeometry();
+
+		  this._elementDom.addEventListener("click",
+													 (event: Event) => {
+														  this._lastEvent = event;
+														  this._onClick();
+														  this._lastEvent = null; });
 	 }
 
 	 AddChildWidget(widget: Widget): void {
-		  this._elementDom.appendChild(widget.GetDom());
+		  this._elementDom.appendChild(widget.DomElement);
 	 }
 
     Draw(parent?: HTMLElement): HTMLElement
@@ -37,59 +54,68 @@ class Widget
 		  return widget;
     }
 
-    Show(): void
-    {
+    Show(): void {
 		  this._elementDom.style.display = "auto";
     }
 
-    Hide(): void
-    {
+    Hide(): void {
 		  this._elementDom.style.display = "none";
     }
 
-	 GetDom(): HTMLElement
-    {
-		  return this._elementDom;
-    }
-
-	 Remove(): void
-    {
+	 Remove(): void {
 		  if (this._elementDom)
 				this._elementDom.remove();
     }
 
-	 get verticalPosition(): number
-	 {
+	 //
+	 // Getters
+	 //
+	 get DomElement(): HTMLElement {
+		  return this._elementDom;
+    }
+
+	 get VerticalPosition(): number {
 		  return this._verticalPosition;
 	 }
 
-	 set verticalPosition(newPosition: number)
-	 {
-		  this._verticalPosition = newPosition;
-	 }
-
-	 get width(): number
-	 {
+	 get Width(): number {
 		  return this._width;
 	 }
 
-	 set width(newSize: number)
+	 get Height(): number {
+		  return this._width;
+	 }
+
+	 //
+	 // Setters
+	 //
+	 set Width(newSize: number)
 	 {
 		  this._width = newSize;
 		  this.UpdateDomGeometry();
 	 }
 
-	 get height(): number
-	 {
-		  return this._width;
+	 set VerticalPosition(newPosition: number) {
+		  this._verticalPosition = newPosition;
 	 }
 
-	 set height(newSize: number)
+	 set Height(newSize: number)
 	 {
 		  this._height = newSize;
 		  this.UpdateDomGeometry();
 	 }
 
+	 set Text(newText: string) {
+		  this._elementDom.innerText = newText;
+	 }
+
+	 set OnClick(clickMethod: Function) {
+		  this._onClick = clickMethod;
+	 }
+
+	 //
+	 // Private or protected method
+	 //
 	 private UpdateDomGeometry(): void
 	 {
 		  if (this._elementDom)

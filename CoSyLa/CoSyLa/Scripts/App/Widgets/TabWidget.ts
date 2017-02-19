@@ -10,7 +10,7 @@
 		  if (tabIndex < 0 || tabIndex > this.countTabs)
 				return;
 
-		  this._tabsContent[tabIndex].appendChild(widget.GetDom());
+		  this._tabsContent[tabIndex].appendChild(widget.DomElement);
 	 }
 
 	 AddTab(title: string): void

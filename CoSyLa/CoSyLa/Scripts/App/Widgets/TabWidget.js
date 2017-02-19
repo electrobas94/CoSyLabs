@@ -14,7 +14,7 @@ var TabWidget = (function (_super) {
     TabWidget.prototype.AddWidgetOnTab = function (tabIndex, widget) {
         if (tabIndex < 0 || tabIndex > this.countTabs)
             return;
-        this._tabsContent[tabIndex].appendChild(widget.GetDom());
+        this._tabsContent[tabIndex].appendChild(widget.DomElement);
     };
     TabWidget.prototype.AddTab = function (title) {
         var _this = this;

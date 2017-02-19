@@ -1,14 +1,19 @@
 var Widget = (function () {
     function Widget(parent) {
+        var _this = this;
         this._elementDom = null;
         this._width = 100;
         this._height = 100;
         this._horizontalPosition = 0;
         this._verticalPosition = 0;
         this._defaultUnits = "%";
+        this.onClick = function (ev) { alert("Bugaga"); };
         this._elementDom = this.Draw(parent);
-        this.UpdateDomGeometry();
+        this._elementDom.addEventListener("click", function (ev) { _this.onClick(ev); });
     }
+    Widget.prototype.AddChildWidget = function (widget) {
+        this._elementDom.appendChild(widget.DomElement);
+    };
     Widget.prototype.Draw = function (parent) {
         var widget = document.createElement("div");
         widget.classList.add("widget");
@@ -24,14 +29,18 @@ var Widget = (function () {
     Widget.prototype.Hide = function () {
         this._elementDom.style.display = "none";
     };
-    Widget.prototype.GetDom = function () {
-        return this._elementDom;
-    };
     Widget.prototype.Remove = function () {
         if (this._elementDom)
             this._elementDom.remove();
     };
-    Object.defineProperty(Widget.prototype, "verticalPosition", {
+    Object.defineProperty(Widget.prototype, "DomElement", {
+        get: function () {
+            return this._elementDom;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Widget.prototype, "VerticalPosition", {
         get: function () {
             return this._verticalPosition;
         },
@@ -41,7 +50,7 @@ var Widget = (function () {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(Widget.prototype, "width", {
+    Object.defineProperty(Widget.prototype, "Width", {
         get: function () {
             return this._width;
         },
@@ -52,13 +61,20 @@ var Widget = (function () {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(Widget.prototype, "height", {
+    Object.defineProperty(Widget.prototype, "Height", {
         get: function () {
             return this._width;
         },
         set: function (newSize) {
             this._height = newSize;
             this.UpdateDomGeometry();
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Widget.prototype, "Text", {
+        set: function (newText) {
+            this._elementDom.innerText = newText;
         },
         enumerable: true,
         configurable: true
