@@ -12,6 +12,7 @@
   "./Widgets/Widget.ts",
   "./Widgets/TabWidget.ts",
   "./Widgets/ButtonWidget.ts",
-  "./Widgets/ButtonGroupWidget.ts"
+  "./Widgets/ButtonGroupWidget.ts",
+  "./Widgets/ToolBarWidget.ts"
   ]
 }

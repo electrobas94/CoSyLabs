@@ -25,5 +25,12 @@ var ButtonGroupWidget = (function (_super) {
         this.AddChildWidget(button);
         this._buttonsList.push(button);
     };
+    Object.defineProperty(ButtonGroupWidget.prototype, "Buttons", {
+        get: function () {
+            return this._buttonsList;
+        },
+        enumerable: true,
+        configurable: true
+    });
     return ButtonGroupWidget;
 }(Widget));

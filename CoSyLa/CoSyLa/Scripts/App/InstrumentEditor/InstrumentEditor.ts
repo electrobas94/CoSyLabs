@@ -15,8 +15,17 @@
 		  butGroup.AddButton();
 		  butGroup.AddButton();
 
-		  this.w.AddWidgetOnTab(0, but);
-		  this.w.AddWidgetOnTab(0, butGroup);
+		  let butGroup2: ButtonGroupWidget = new ButtonGroupWidget();
+		  butGroup2.AddButton();
+		  butGroup2.AddButton();
+		  butGroup2.AddButton();
+
+		  let toolBar: ToolBarWidget = new ToolBarWidget();
+		  toolBar.AddToolGroup(butGroup);
+		  toolBar.AddToolGroup(butGroup2);
+
+		  //this.w.AddWidgetOnTab(0, but);
+		  this.w.AddWidgetOnTab(0, toolBar);
     }
 }
 

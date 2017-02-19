@@ -10,8 +10,14 @@ var InstrumentEditor = (function () {
         butGroup.AddButton();
         butGroup.AddButton();
         butGroup.AddButton();
-        this.w.AddWidgetOnTab(0, but);
-        this.w.AddWidgetOnTab(0, butGroup);
+        var butGroup2 = new ButtonGroupWidget();
+        butGroup2.AddButton();
+        butGroup2.AddButton();
+        butGroup2.AddButton();
+        var toolBar = new ToolBarWidget();
+        toolBar.AddToolGroup(butGroup);
+        toolBar.AddToolGroup(butGroup2);
+        this.w.AddWidgetOnTab(0, toolBar);
     }
     return InstrumentEditor;
 }());

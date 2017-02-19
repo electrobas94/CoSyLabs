@@ -28,6 +28,7 @@ namespace CoSyLa
 					 "~/Scripts/App/Widgets/TabWidget.js", 
 					 "~/Scripts/App/Widgets/ButtonWidget.js",
 					 "~/Scripts/App/Widgets/ButtonGroupWidget.js",
+					 "~/Scripts/App/Widgets/ToolBarWidget.js",
 					 "~/Scripts/App/InstrumentEditor/InstrumentEditor.js"));
 
 				bundles.Add(new StyleBundle("~/Content/css").Include(
