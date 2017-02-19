@@ -89,6 +89,14 @@ class Widget
 	 //
 	 // Setters
 	 //
+	 set MeasureUnits(unitsType: string)
+	 {
+		  if (!unitsType || unitsType.length > 2 || unitsType.length == 0)
+				return;
+
+		  this._defaultUnits = unitsType;
+	 }
+
 	 set Width(newSize: number)
 	 {
 		  this._width = newSize;

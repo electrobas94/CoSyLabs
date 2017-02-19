@@ -24,6 +24,8 @@
 		  toolBar.AddToolGroup(butGroup);
 		  toolBar.AddToolGroup(butGroup2);
 
+		  toolBar.Height = 4;
+
 		  //this.w.AddWidgetOnTab(0, but);
 		  this.w.AddWidgetOnTab(0, toolBar);
     }
