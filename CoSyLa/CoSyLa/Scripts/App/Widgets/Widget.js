@@ -7,9 +7,14 @@ var Widget = (function () {
         this._horizontalPosition = 0;
         this._verticalPosition = 0;
         this._defaultUnits = "%";
-        this.onClick = function (ev) { alert("Bugaga"); };
+        this._lastEvent = null;
+        this._onClick = function () { };
         this._elementDom = this.Draw(parent);
-        this._elementDom.addEventListener("click", function (ev) { _this.onClick(ev); });
+        this._elementDom.addEventListener("click", function (event) {
+            _this._lastEvent = event;
+            _this._onClick();
+            _this._lastEvent = null;
+        });
     }
     Widget.prototype.AddChildWidget = function (widget) {
         this._elementDom.appendChild(widget.DomElement);
@@ -75,6 +80,13 @@ var Widget = (function () {
     Object.defineProperty(Widget.prototype, "Text", {
         set: function (newText) {
             this._elementDom.innerText = newText;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Widget.prototype, "OnClick", {
+        set: function (clickMethod) {
+            this._onClick = clickMethod;
         },
         enumerable: true,
         configurable: true

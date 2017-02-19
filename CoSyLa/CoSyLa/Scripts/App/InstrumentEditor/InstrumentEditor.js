@@ -4,7 +4,9 @@ var InstrumentEditor = (function () {
         this.w.AddTab("Визуальный редактор");
         this.w.AddTab("Редактор логики");
         this.w.AddTab("Общие настройки");
-        this.w.AddWidgetOnTab(0, new ButtonWidget());
+        var but = new ButtonWidget();
+        but.Text = "Жмякни";
+        this.w.AddWidgetOnTab(0, but);
     }
     return InstrumentEditor;
 }());

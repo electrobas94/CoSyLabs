@@ -7,7 +7,10 @@
 		  this.w.AddTab("Редактор логики");
 		  this.w.AddTab("Общие настройки");
 
-		  this.w.AddWidgetOnTab(0, new ButtonWidget());
+		  let but = new ButtonWidget();
+		  but.Text = "Жмякни";
+
+		  this.w.AddWidgetOnTab(0, but);
     }
 }
 
