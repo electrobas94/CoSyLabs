@@ -10,7 +10,13 @@
 		  let but = new ButtonWidget();
 		  but.Text = "Жмякни";
 
+		  let butGroup: ButtonGroupWidget = new ButtonGroupWidget();
+		  butGroup.AddButton();
+		  butGroup.AddButton();
+		  butGroup.AddButton();
+
 		  this.w.AddWidgetOnTab(0, but);
+		  this.w.AddWidgetOnTab(0, butGroup);
     }
 }
 
