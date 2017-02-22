@@ -25,6 +25,7 @@ namespace CoSyLa
 
 				bundles.Add(new ScriptBundle("~/bundles/app").Include(
 					 "~/Scripts/App/Widgets/Widget.js",
+					 "~/Scripts/App/Widgets/MainWidget.js",
 					 "~/Scripts/App/Widgets/TabWidget.js", 
 					 "~/Scripts/App/Widgets/ButtonWidget.js",
 					 "~/Scripts/App/Widgets/ButtonGroupWidget.js",
