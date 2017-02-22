@@ -58,17 +58,12 @@
 		  
 	 }
 
-    Draw(parent?: HTMLElement): HTMLElement
+    Draw(): HTMLElement
 	 {
 		  let tabWidget = document.createElement("div");
 		  let menuTab   = this.CreateMenuTabs();
 
 		  tabWidget.appendChild(menuTab);
-
-        if (parent)
-				parent.appendChild(tabWidget);
-		  else
-				document.body.appendChild(tabWidget);
 
 		  return tabWidget;
     }

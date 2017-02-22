@@ -255,6 +255,7 @@
     <TypeScriptCompile Include="Scripts\App\InstrumentEditor\InstrumentEditor.ts" />
     <TypeScriptCompile Include="Scripts\App\Widgets\ButtonGroupWidget.ts" />
     <TypeScriptCompile Include="Scripts\App\Widgets\ButtonWidget.ts" />
+    <TypeScriptCompile Include="Scripts\App\Widgets\ItemListWidget.ts" />
     <TypeScriptCompile Include="Scripts\App\Widgets\TabWidget.ts" />
     <TypeScriptCompile Include="Scripts\App\Widgets\ToolBarWidget.ts" />
     <TypeScriptCompile Include="Scripts\App\Widgets\Widget.ts" />

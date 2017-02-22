@@ -6,11 +6,6 @@
 
 		  toolBar.classList.add("btn-toolbar");
 
-        if (parent)
-				parent.appendChild(toolBar);
-		  else
-				document.body.appendChild(toolBar);
-
 		  return toolBar;
     }
 

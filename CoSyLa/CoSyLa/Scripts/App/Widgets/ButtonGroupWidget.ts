@@ -7,11 +7,6 @@
 
 		  buttonGroupElem.classList.add("btn-group");
 
-        if (parent)
-				parent.appendChild(buttonGroupElem);
-		  else
-				document.body.appendChild(buttonGroupElem);
-
 		  return buttonGroupElem;
     }
 

@@ -40,6 +40,7 @@
 		  toolBar.ToolGroup[1].AddButton();
 
 		  let canvas: Widget = new Widget();
+		  //canvas.Text = "3d canvas";
 		  canvas.Height = 95;
 		  canvas.DomElement.style.backgroundColor = "#c5c5c5";
 		  w.AddChildWidget(canvas);

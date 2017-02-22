@@ -26,10 +26,13 @@ class Widget
 	 //
 	 // Public methods
 	 //
-	 constructor(parent?: HTMLElement)
+	 constructor(parent?: Widget)
 	 {
-		  this._elementDom = this.Draw(parent);
+		  this._elementDom = this.Draw();
 		  this.InitWidget();
+
+		  if (parent)
+				parent.AddChildWidget(this);
 
 		  this._elementDom.addEventListener("click",
 													 (event: Event) => {
@@ -42,15 +45,10 @@ class Widget
 		  this._elementDom.appendChild(widget.DomElement);
 	 }
 
-    Draw(parent?: HTMLElement): HTMLElement
+    Draw(): HTMLElement
     {
 		  var widget = document.createElement("div");
 		  widget.classList.add("widget");
-
-        if (parent)
-				parent.appendChild(widget);
-		  else
-				document.body.appendChild(widget);
 
 		  return widget;
     }

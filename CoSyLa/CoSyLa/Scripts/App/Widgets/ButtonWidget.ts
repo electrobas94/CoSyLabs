@@ -7,11 +7,6 @@
 		  buttonWidget.classList.add("btn");
 		  buttonWidget.classList.add("btn-default");
 
-        if (parent)
-				parent.appendChild(buttonWidget);
-		  else
-				document.body.appendChild(buttonWidget);
-
 		  return buttonWidget;
     }
 
