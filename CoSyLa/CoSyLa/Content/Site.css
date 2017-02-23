@@ -44,3 +44,7 @@ html, body {
 	 all:initial;
 	 position:fixed;
 }
+
+#main_canvas_container canvas{
+	 position:static!important;
+}

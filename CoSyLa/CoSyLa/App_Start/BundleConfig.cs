@@ -24,6 +24,8 @@ namespace CoSyLa
                       "~/Scripts/respond.js"));
 
 				bundles.Add(new ScriptBundle("~/bundles/app").Include(
+					 "~/Scripts/b4w.min.js",
+					 "~/Scripts/App/JSScriptAdapter.js",
 					 "~/Scripts/App/Widgets/Widget.js",
 					 "~/Scripts/App/Widgets/MainWidget.js",
 					 "~/Scripts/App/Widgets/TabWidget.js", 

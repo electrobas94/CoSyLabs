@@ -8,13 +8,14 @@
   "sourceMap": false
   },
   "files": [
-  "./InstrumentEditor/InstrumentEditor.ts",
-  "./Widgets/Widget.ts",
-  "./Widgets/MainWidget.ts",
-  "./Widgets/TabWidget.ts",
-  "./Widgets/ButtonWidget.ts",
-  "./Widgets/ButtonGroupWidget.ts",
-  "./Widgets/ItemListWidget.ts",
-  "./Widgets/ToolBarWidget.ts"
+	 "JSScriptAdapter.ts",
+    "./InstrumentEditor/InstrumentEditor.ts",
+    "./Widgets/Widget.ts",
+    "./Widgets/MainWidget.ts",
+    "./Widgets/TabWidget.ts",
+    "./Widgets/ButtonWidget.ts",
+    "./Widgets/ButtonGroupWidget.ts",
+    "./Widgets/ItemListWidget.ts",
+    "./Widgets/ToolBarWidget.ts"
   ]
 }

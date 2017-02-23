@@ -35,6 +35,7 @@ var InstrumentEditor = (function () {
         toolBar.ToolGroup[1].AddButton();
         toolBar.ToolGroup[1].AddButton();
         var canvas = new Widget();
+        canvas.DomElement.id = "main_canvas_container";
         canvas.Height = 95;
         canvas.DomElement.style.backgroundColor = "#c5c5c5";
         w.AddChildWidget(canvas);
