@@ -45,14 +45,11 @@ var TabWidget = (function (_super) {
         this._tabsContent[index].style.display = "block";
         this._selectIndex = index;
     };
-    TabWidget.prototype.Draw = function (parent) {
+    TabWidget.prototype.Draw = function () {
         var tabWidget = document.createElement("div");
         var menuTab = this.CreateMenuTabs();
+        tabWidget.classList.add("TabWidget");
         tabWidget.appendChild(menuTab);
-        if (parent)
-            parent.appendChild(tabWidget);
-        else
-            document.body.appendChild(tabWidget);
         return tabWidget;
     };
     TabWidget.prototype.CreateMenuTabs = function () {

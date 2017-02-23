@@ -12,10 +12,6 @@ var ButtonGroupWidget = (function (_super) {
     ButtonGroupWidget.prototype.Draw = function (parent) {
         var buttonGroupElem = document.createElement("div");
         buttonGroupElem.classList.add("btn-group");
-        if (parent)
-            parent.appendChild(buttonGroupElem);
-        else
-            document.body.appendChild(buttonGroupElem);
         return buttonGroupElem;
     };
     ButtonGroupWidget.prototype.AddButton = function (newButton) {
@@ -32,5 +28,9 @@ var ButtonGroupWidget = (function (_super) {
         enumerable: true,
         configurable: true
     });
+    ButtonGroupWidget.prototype.InitWidget = function () {
+        this.HorizontalSizePolice = SizePolice.Minimum;
+        this.VerticalSizePolice = SizePolice.Expanding;
+    };
     return ButtonGroupWidget;
 }(Widget));

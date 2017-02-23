@@ -12,8 +12,9 @@
 
 	 protected InitWidget(): void
 	 {
-		  this.MeasureUnits = "px";
-		  this.Height = 40;
-		  this.Width = 40;
+		  this.HorizontalMeasureUnits = "vh";
+		  this.VerticalMeasureUnits = "vh";
+		  this.Height = 4;
+		  this.Width  = 4;
 	 }
 };

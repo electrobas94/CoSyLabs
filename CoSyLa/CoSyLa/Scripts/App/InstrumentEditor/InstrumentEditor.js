@@ -1,6 +1,7 @@
 var InstrumentEditor = (function () {
     function InstrumentEditor() {
-        this.w = new TabWidget(document.getElementById("mainWindow"));
+        var mainWindow = new MainWidget();
+        this.w = new TabWidget(mainWindow);
         this.w.AddTab("Визуальный редактор");
         this.w.AddTab("Редактор логики");
         this.w.AddTab("Общие настройки");
@@ -10,13 +11,20 @@ var InstrumentEditor = (function () {
         this.w.AddWidgetOnTab(0, w2);
         w.Width = 77;
         w2.Width = 23;
-        w.Height = 100;
-        w2.Height = 100;
-        var tab = new TabWidget(w2.DomElement);
+        var tab = new TabWidget(w2);
         tab.AddTab("Элементы");
         tab.AddTab("Свойства");
         tab.AddTab("Инспектор");
-        var toolBar = new ToolBarWidget(w.DomElement);
+        var itemWidget = new ItemListWidget();
+        itemWidget.CreateNewItem("dsfsdf");
+        itemWidget.CreateNewItem("dsfsdf");
+        itemWidget.CreateNewItem("dsfsdf");
+        itemWidget.CreateNewItem("dsfsdf");
+        tab.AddWidgetOnTab(0, itemWidget);
+        var w22 = new Widget();
+        w22.Text = "sdfsdf";
+        tab.AddWidgetOnTab(1, w22);
+        var toolBar = new ToolBarWidget(w);
         toolBar.Height = 5;
         toolBar.AddToolGroup();
         toolBar.AddToolGroup();

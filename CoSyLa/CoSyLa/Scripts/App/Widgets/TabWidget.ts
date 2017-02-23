@@ -61,7 +61,8 @@
     Draw(): HTMLElement
 	 {
 		  let tabWidget = document.createElement("div");
-		  let menuTab   = this.CreateMenuTabs();
+		  let menuTab = this.CreateMenuTabs();
+		  tabWidget.classList.add("TabWidget");
 
 		  tabWidget.appendChild(menuTab);
 

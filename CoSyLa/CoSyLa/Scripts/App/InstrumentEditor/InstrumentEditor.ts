@@ -4,7 +4,8 @@
     constructor()
 	 {
 
-        this.w = new TabWidget(document.getElementById("mainWindow"));
+		  let mainWindow = new MainWidget();
+        this.w = new TabWidget(mainWindow);
 		  this.w.AddTab("Визуальный редактор");
 		  this.w.AddTab("Редактор логики");
 		  this.w.AddTab("Общие настройки");
@@ -17,15 +18,25 @@
 
 		  w.Width = 77;
 		  w2.Width = 23;
-		  w.Height = 100;
-		  w2.Height = 100; 
 
-		  let tab: TabWidget = new TabWidget(w2.DomElement);
+		  let tab: TabWidget = new TabWidget(w2);
 		  tab.AddTab("Элементы");
 		  tab.AddTab("Свойства");
 		  tab.AddTab("Инспектор");
 
-		  let toolBar: ToolBarWidget = new ToolBarWidget(w.DomElement);
+		  let itemWidget: ItemListWidget = new ItemListWidget();
+
+		  itemWidget.CreateNewItem("dsfsdf");
+		  itemWidget.CreateNewItem("dsfsdf");
+		  itemWidget.CreateNewItem("dsfsdf");
+		  itemWidget.CreateNewItem("dsfsdf");
+
+		  tab.AddWidgetOnTab(0, itemWidget);
+		  let w22: Widget = new Widget();
+		  w22.Text = "sdfsdf";
+		  tab.AddWidgetOnTab(1, w22);
+
+		  let toolBar: ToolBarWidget = new ToolBarWidget(w);
 		  toolBar.Height = 5;
 
 		  toolBar.AddToolGroup();

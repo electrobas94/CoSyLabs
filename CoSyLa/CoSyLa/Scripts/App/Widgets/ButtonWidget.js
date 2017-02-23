@@ -12,16 +12,13 @@ var ButtonWidget = (function (_super) {
         var buttonWidget = document.createElement("button");
         buttonWidget.classList.add("btn");
         buttonWidget.classList.add("btn-default");
-        if (parent)
-            parent.appendChild(buttonWidget);
-        else
-            document.body.appendChild(buttonWidget);
         return buttonWidget;
     };
     ButtonWidget.prototype.InitWidget = function () {
-        this.MeasureUnits = "px";
-        this.Height = 40;
-        this.Width = 40;
+        this.HorizontalMeasureUnits = "vh";
+        this.VerticalMeasureUnits = "vh";
+        this.Height = 4;
+        this.Width = 4;
     };
     return ButtonWidget;
 }(Widget));

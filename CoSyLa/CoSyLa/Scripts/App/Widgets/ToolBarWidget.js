@@ -12,10 +12,6 @@ var ToolBarWidget = (function (_super) {
     ToolBarWidget.prototype.Draw = function (parent) {
         var toolBar = document.createElement("div");
         toolBar.classList.add("btn-toolbar");
-        if (parent)
-            parent.appendChild(toolBar);
-        else
-            document.body.appendChild(toolBar);
         return toolBar;
     };
     ToolBarWidget.prototype.AddToolGroup = function (newToolGroup) {

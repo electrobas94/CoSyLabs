@@ -24,4 +24,9 @@
 	 get Buttons(): Array<ButtonWidget> {
 		  return this._buttonsList;
 	 }
+
+	 protected InitWidget(): void {
+		  this.HorizontalSizePolice = SizePolice.Minimum;
+		  this.VerticalSizePolice = SizePolice.Expanding;
+	 }
 }

@@ -1,6 +1,13 @@
 ﻿/*
 	 Base element interface class
 */
+enum SizePolice
+{
+	 Fixed = 1,
+	 Expanding,
+	 Minimum 
+};
+
 class Widget
 {
 	 //
@@ -12,10 +19,9 @@ class Widget
 	 protected _width:  number = 100;
 	 protected _height: number = 100;
 	 protected _horizontalPosition: number = 0;
-	 protected _verticalPosition:   number = 0;
-
-	 // Default measure units for size and position DOM element
-	 protected _defaultUnits: string = "%";
+	 protected _verticalPosition: number = 0;
+	 protected _verticalMeasureUnits: string = "vh";
+	 protected _horizontalMeasureUnits: string = "%";
 
 	 //
 	 // Action-properties
@@ -39,6 +45,15 @@ class Widget
 														  this._lastEvent = event;
 														  this._onClick();
 														  this._lastEvent = null; });
+	 }
+
+	 AddClassStyle(className: string): void
+	 {
+		  this.DomElement.classList.add(className);
+	 }
+
+	 RemoveClassStyle(className: string): void {
+		  this.DomElement.classList.remove(className);
 	 }
 
 	 AddChildWidget(widget: Widget): void {
@@ -88,18 +103,38 @@ class Widget
 	 //
 	 // Setters
 	 //
-	 set MeasureUnits(unitsType: string)
+	 set VerticalSizePolice(sizePolice: SizePolice)
 	 {
-		  if (!unitsType || unitsType.length > 2 || unitsType.length == 0)
-				return;
+		  switch (sizePolice)
+		  {
+				case SizePolice.Minimum:   this.DomElement.style.height = "auto"; break;
+				case SizePolice.Expanding: this.DomElement.style.height = "100%"; break;
+				case SizePolice.Fixed:     this.DomElement.style.height = this._height + this._verticalMeasureUnits; break;
+		  }
+	 }
 
-		  this._defaultUnits = unitsType;
+	 set HorizontalSizePolice(sizePolice: SizePolice) {
+		  switch (sizePolice) {
+				case SizePolice.Minimum: this.DomElement.style.width = "auto"; break;
+				case SizePolice.Expanding: this.DomElement.style.width = "100%"; break;
+				case SizePolice.Fixed: this.DomElement.style.height = this._width + this._horizontalMeasureUnits; break;
+		  }
+	 }
+
+	 set HorizontalMeasureUnits(measureUnits: string) {
+		  this._horizontalMeasureUnits = measureUnits;
+		  this.DomElement.style.width = this._width + this._horizontalMeasureUnits;
+	 }
+
+	 set VerticalMeasureUnits(measureUnits: string) {
+		  this._horizontalMeasureUnits = measureUnits;
+		  this.DomElement.style.height = this._height + this._verticalMeasureUnits;
 	 }
 
 	 set Width(newSize: number)
 	 {
 		  this._width = newSize;
-		  this.UpdateDomGeometry();
+		  this._elementDom.style.width = this._width.toString() + this._horizontalMeasureUnits;
 	 }
 
 	 set VerticalPosition(newPosition: number) {
@@ -109,7 +144,7 @@ class Widget
 	 set Height(newSize: number)
 	 {
 		  this._height = newSize;
-		  this.UpdateDomGeometry();
+		  this._elementDom.style.height = this._height.toString() + this._verticalMeasureUnits;
 	 }
 
 	 set Text(newText: string) {
@@ -120,22 +155,9 @@ class Widget
 		  this._onClick = clickMethod;
 	 }
 
-	 //
-	 // Private or protected method
-	 //
-	 private UpdateDomGeometry(): void
-	 {
-		  if (this._elementDom)
-		  {
-				this._elementDom.style.top   = this._verticalPosition.toString()   + this._defaultUnits;
-				this._elementDom.style.right = this._horizontalPosition.toString() + this._defaultUnits;
-
-				this._elementDom.style.width  = this._width.toString()  + this._defaultUnits;
-				this._elementDom.style.height = this._height.toString() + this._defaultUnits;
-		  }
-	 }
-
 	 protected InitWidget(): void
 	 {
+		  this.HorizontalSizePolice = SizePolice.Expanding;
+		  this.VerticalSizePolice = SizePolice.Expanding;
 	 }
 };

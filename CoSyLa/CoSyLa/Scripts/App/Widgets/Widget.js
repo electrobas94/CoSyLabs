@@ -1,3 +1,10 @@
+var SizePolice;
+(function (SizePolice) {
+    SizePolice[SizePolice["Fixed"] = 1] = "Fixed";
+    SizePolice[SizePolice["Expanding"] = 2] = "Expanding";
+    SizePolice[SizePolice["Minimum"] = 3] = "Minimum";
+})(SizePolice || (SizePolice = {}));
+;
 var Widget = (function () {
     function Widget(parent) {
         var _this = this;
@@ -6,27 +13,32 @@ var Widget = (function () {
         this._height = 100;
         this._horizontalPosition = 0;
         this._verticalPosition = 0;
-        this._defaultUnits = "%";
+        this._verticalMeasureUnits = "vh";
+        this._horizontalMeasureUnits = "%";
         this._lastEvent = null;
         this._onClick = function () { };
-        this._elementDom = this.Draw(parent);
+        this._elementDom = this.Draw();
         this.InitWidget();
+        if (parent)
+            parent.AddChildWidget(this);
         this._elementDom.addEventListener("click", function (event) {
             _this._lastEvent = event;
             _this._onClick();
             _this._lastEvent = null;
         });
     }
+    Widget.prototype.AddClassStyle = function (className) {
+        this.DomElement.classList.add(className);
+    };
+    Widget.prototype.RemoveClassStyle = function (className) {
+        this.DomElement.classList.remove(className);
+    };
     Widget.prototype.AddChildWidget = function (widget) {
         this._elementDom.appendChild(widget.DomElement);
     };
-    Widget.prototype.Draw = function (parent) {
+    Widget.prototype.Draw = function () {
         var widget = document.createElement("div");
         widget.classList.add("widget");
-        if (parent)
-            parent.appendChild(widget);
-        else
-            document.body.appendChild(widget);
         return widget;
     };
     Widget.prototype.Show = function () {
@@ -62,7 +74,7 @@ var Widget = (function () {
         },
         set: function (newSize) {
             this._width = newSize;
-            this.UpdateDomGeometry();
+            this._elementDom.style.width = this._width.toString() + this._horizontalMeasureUnits;
         },
         enumerable: true,
         configurable: true
@@ -73,16 +85,57 @@ var Widget = (function () {
         },
         set: function (newSize) {
             this._height = newSize;
-            this.UpdateDomGeometry();
+            this._elementDom.style.height = this._height.toString() + this._verticalMeasureUnits;
         },
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(Widget.prototype, "MeasureUnits", {
-        set: function (unitsType) {
-            if (!unitsType || unitsType.length > 2 || unitsType.length == 0)
-                return;
-            this._defaultUnits = unitsType;
+    Object.defineProperty(Widget.prototype, "VerticalSizePolice", {
+        set: function (sizePolice) {
+            switch (sizePolice) {
+                case SizePolice.Minimum:
+                    this.DomElement.style.height = "auto";
+                    break;
+                case SizePolice.Expanding:
+                    this.DomElement.style.height = "100%";
+                    break;
+                case SizePolice.Fixed:
+                    this.DomElement.style.height = this._height + this._verticalMeasureUnits;
+                    break;
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Widget.prototype, "HorizontalSizePolice", {
+        set: function (sizePolice) {
+            switch (sizePolice) {
+                case SizePolice.Minimum:
+                    this.DomElement.style.width = "auto";
+                    break;
+                case SizePolice.Expanding:
+                    this.DomElement.style.width = "100%";
+                    break;
+                case SizePolice.Fixed:
+                    this.DomElement.style.height = this._width + this._horizontalMeasureUnits;
+                    break;
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Widget.prototype, "HorizontalMeasureUnits", {
+        set: function (measureUnits) {
+            this._horizontalMeasureUnits = measureUnits;
+            this.DomElement.style.width = this._width + this._horizontalMeasureUnits;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Widget.prototype, "VerticalMeasureUnits", {
+        set: function (measureUnits) {
+            this._horizontalMeasureUnits = measureUnits;
+            this.DomElement.style.height = this._height + this._verticalMeasureUnits;
         },
         enumerable: true,
         configurable: true
@@ -101,15 +154,9 @@ var Widget = (function () {
         enumerable: true,
         configurable: true
     });
-    Widget.prototype.UpdateDomGeometry = function () {
-        if (this._elementDom) {
-            this._elementDom.style.top = this._verticalPosition.toString() + this._defaultUnits;
-            this._elementDom.style.right = this._horizontalPosition.toString() + this._defaultUnits;
-            this._elementDom.style.width = this._width.toString() + this._defaultUnits;
-            this._elementDom.style.height = this._height.toString() + this._defaultUnits;
-        }
-    };
     Widget.prototype.InitWidget = function () {
+        this.HorizontalSizePolice = SizePolice.Expanding;
+        this.VerticalSizePolice = SizePolice.Expanding;
     };
     return Widget;
 }());
