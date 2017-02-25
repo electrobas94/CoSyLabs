@@ -224,6 +224,7 @@
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\uranium.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -240,6 +241,9 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\InstrumentEditor\Index.cshtml" />
+    <Content Include="Scripts\uranium_mem.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -254,6 +258,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\App\InstrumentEditor\InstrumentEditor.ts" />
     <TypeScriptCompile Include="Scripts\App\JSScriptAdapter.ts" />
+    <TypeScriptCompile Include="Scripts\App\Render3D\Blend4Web.ts" />
     <TypeScriptCompile Include="Scripts\App\Widgets\ButtonGroupWidget.ts" />
     <TypeScriptCompile Include="Scripts\App\Widgets\ButtonWidget.ts" />
     <TypeScriptCompile Include="Scripts\App\Widgets\ItemListWidget.ts" />

@@ -40,6 +40,7 @@ var InstrumentEditor = (function () {
         canvas.DomElement.style.backgroundColor = "#c5c5c5";
         w.AddChildWidget(canvas);
         this.w.Height = 100;
+        blend4WebEngine.Init();
     }
     return InstrumentEditor;
 }());

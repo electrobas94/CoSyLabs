@@ -9,7 +9,8 @@
   },
   "files": [
 	 "JSScriptAdapter.ts",
-    "./InstrumentEditor/InstrumentEditor.ts",
+    "./Render3d/Blend4Web.ts",
+	 "./InstrumentEditor/InstrumentEditor.ts",
     "./Widgets/Widget.ts",
     "./Widgets/MainWidget.ts",
     "./Widgets/TabWidget.ts",
