@@ -1,5 +1,7 @@
 ﻿// Blend4Web - singleton
 
+declare var b4w: any;
+
 class Blend4Web {
 	 protected _Appliction: any;
 	 protected _Data: any;
