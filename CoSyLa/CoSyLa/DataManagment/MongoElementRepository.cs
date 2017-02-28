@@ -16,7 +16,7 @@ namespace CoSyLa.DataManagment
 				string conectParams = ConfigurationManager.ConnectionStrings["MongoDb"].ConnectionString;
 				_Client = new MongoClient(conectParams);
 		  }
-		  public MongoElementRepository(MongoClient mongoClient)
+		  public MongoElementRepository(IMongoDatabase mongoClient)
 		  {
 				_Client = mongoClient;
 		  }

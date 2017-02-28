@@ -10,7 +10,8 @@ namespace CoSyLa.DataManagment
 {
 	 public class MongoRepositoryManager: IRepositoryManager
 	 {
-		  MongoClient _Client;
+		  MongoClient    _Client;
+		  IMongoDatabase _Database;
 		  MongoLaboratotyRepository _LaboratotyRepository;
 		  MongoInstrumentRepository _InstrumentRepository;
 		  MongoElementRepository    _ElementRepository;
@@ -46,15 +47,19 @@ namespace CoSyLa.DataManagment
 				}
 		  }
 
-		  public MongoRepositoryManager()
+		  public MongoRepositoryManager( string databaseName )
 		  {
 				string conectParams = ConfigurationManager.ConnectionStrings["MongoDb"].ConnectionString;
-				_Client = new MongoClient(conectParams);
+				_Client   = new MongoClient(conectParams);
+				_Database = _Client.GetDatabase(databaseName);
 
-				_LaboratotyRepository = new MongoLaboratotyRepository (_Client);
-				_InstrumentRepository = new MongoInstrumentRepository (_Client);
-				_ElementRepository    = new MongoElementRepository    (_Client);
-				_ModelRepository      = new Mongo3DModelRepository    (_Client);
+				if ( _Database == null )
+					 throw new ApplicationException("Error: Conection with Mongo database is failed");
+
+				_LaboratotyRepository = new MongoLaboratotyRepository ( _Database );
+				_InstrumentRepository = new MongoInstrumentRepository ( _Database );
+				_ElementRepository    = new MongoElementRepository    ( _Database );
+				_ModelRepository      = new Mongo3DModelRepository    ( _Database );
 		  }
 	 }
 }

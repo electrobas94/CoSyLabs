@@ -16,7 +16,7 @@ namespace CoSyLa.DataManagment
 				string conectParams = ConfigurationManager.ConnectionStrings["MongoDb"].ConnectionString;
 				_Client = new MongoClient(conectParams);
 		  }
-		  public Mongo3DModelRepository(MongoClient mongoClient)
+		  public Mongo3DModelRepository(IMongoDatabase mongoClient)
 		  {
 				_Client = mongoClient;
 		  }
