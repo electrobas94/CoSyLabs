@@ -12,10 +12,11 @@ namespace CoSyLa.DataManagment
 	 {
 		  MongoClient    _Client;
 		  IMongoDatabase _Database;
-		  MongoLaboratotyRepository _LaboratotyRepository;
-		  MongoInstrumentRepository _InstrumentRepository;
-		  MongoElementRepository    _ElementRepository;
-		  Mongo3DModelRepository    _ModelRepository;
+
+		  MongoLaboratotyRepository    _LaboratotyRepository;
+		  MongoInstrumentRepository    _InstrumentRepository;
+		  MongoVisualElementRepository _ElementRepository;
+		  Mongo3DModelRepository       _ModelRepository;
 
 		  public ILaboratotyRepository laboratotyRepository 
 		  { 
@@ -31,7 +32,7 @@ namespace CoSyLa.DataManagment
 					 return _InstrumentRepository;
 				}
 		  }
-		  public IElementRepository elementRepository
+		  public IVisualElementRepository elementRepository
 		  {
 				get
 				{
@@ -56,10 +57,10 @@ namespace CoSyLa.DataManagment
 				if ( _Database == null )
 					 throw new ApplicationException("Error: Conection with Mongo database is failed");
 
-				_LaboratotyRepository = new MongoLaboratotyRepository ( _Database );
-				_InstrumentRepository = new MongoInstrumentRepository ( _Database );
-				_ElementRepository    = new MongoElementRepository    ( _Database );
-				_ModelRepository      = new Mongo3DModelRepository    ( _Database );
+				_LaboratotyRepository = new MongoLaboratotyRepository    ( _Database );
+				_InstrumentRepository = new MongoInstrumentRepository    ( _Database );
+				_ElementRepository    = new MongoVisualElementRepository ( _Database );
+				_ModelRepository      = new Mongo3DModelRepository       ( _Database );
 		  }
 	 }
 }

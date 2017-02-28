@@ -5,7 +5,7 @@ using System.Web;
 
 namespace CoSyLa.DataManagment
 {
-	 public interface IElementRepository
+	 public interface IVisualElementRepository
 	 {
 	 }
 }

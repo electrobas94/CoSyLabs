@@ -10,7 +10,7 @@ namespace CoSyLa.DataManagment
 	 {
 		  ILaboratotyRepository laboratotyRepository { get; }
 		  IInstrumentRepository instrumentRepository { get; }
-		  IElementRepository    elementRepository    { get; }
+		  IVisualElementRepository    elementRepository    { get; }
 		  IModel3DRepository		modelRepository      { get; }
 	 }
 }

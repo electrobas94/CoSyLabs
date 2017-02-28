@@ -192,14 +192,14 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="DataManagment\IElementRepository.cs" />
+    <Compile Include="DataManagment\IVisualElementRepository.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InstrumentEditorController.cs" />
     <Compile Include="DataManagment\IInstrumentRepository.cs" />
     <Compile Include="DataManagment\ILaboratotyRepository.cs" />
     <Compile Include="DataManagment\IModel3DRepository.cs" />
     <Compile Include="DataManagment\IRepositoryManager.cs" />
-    <Compile Include="DataManagment\MongoElementRepository.cs" />
+    <Compile Include="DataManagment\MongoVisualElementRepository.cs" />
     <Compile Include="DataManagment\MongoInstrumentRepository.cs" />
     <Compile Include="DataManagment\MongoLaboratotyRepository.cs" />
     <Compile Include="DataManagment\Mongo3DModelRepository.cs" />
@@ -207,6 +207,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\VisualElement.cs" />
     <Compile Include="Models\Model3D.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
