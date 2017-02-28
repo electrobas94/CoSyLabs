@@ -11,8 +11,8 @@ namespace CoSyLa.Models
 	 public class Model3D
 	 {
 		  [BsonId]
-		  public ObjectId IdModel { get; set; }
-		  public string NameModel { get; set; }
+		  public ObjectId Id { get; set; }
+		  public string Name { get; set; }
 
 		  public ObjectId IdMeshFileJson { get; set; }
 		  public ObjectId IdMeshFileBin  { get; set; }

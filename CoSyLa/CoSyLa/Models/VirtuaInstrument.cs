@@ -8,7 +8,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace CoSyLa.Models
 {
-	 public class VisualElement
+	 public class VirtuaInstrument
 	 {
 		  [BsonId]
 		  public ObjectId Id { get; set; }
@@ -19,12 +19,9 @@ namespace CoSyLa.Models
 		  public ObjectId PreviewImageFile { get; set; }
 
 		  public List<string> GeneralTags { get; set; }
-		  public List<string> UserTags    { get; set; }
+		  public List<string> UserTags { get; set; }
 
-		  public int IdTypeElement    { get; set; }
-		  public int IdSubTypeElement { get; set; }
-
-		  public List<ObjectId> Models3D { get; set; }
-		  public List<ObjectId> KeyFrameValues { get; set; }
+		  public ObjectId LogicOfWorkJSFile   { get; set; }
+		  public ObjectId LocationElements { get; set; }
 	 }
 }
