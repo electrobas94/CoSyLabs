@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CoSyLa.DataManagment
 {
-	 public interface IModelRepository
+	 public interface IModel3DRepository
 	 {
 	 }
 }

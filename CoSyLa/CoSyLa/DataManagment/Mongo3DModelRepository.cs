@@ -7,16 +7,16 @@ using System.Configuration;
 
 namespace CoSyLa.DataManagment
 {
-	 public class MongoModelRepository: IModelRepository
+	 public class Mongo3DModelRepository: IModel3DRepository
 	 {
 		  MongoClient _Client;
 
-		  public MongoModelRepository()
+		  public Mongo3DModelRepository()
 		  {
 				string conectParams = ConfigurationManager.ConnectionStrings["MongoDb"].ConnectionString;
 				_Client = new MongoClient(conectParams);
 		  }
-		  public MongoModelRepository(MongoClient mongoClient)
+		  public Mongo3DModelRepository(MongoClient mongoClient)
 		  {
 				_Client = mongoClient;
 		  }

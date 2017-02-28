@@ -197,16 +197,17 @@
     <Compile Include="Controllers\InstrumentEditorController.cs" />
     <Compile Include="DataManagment\IInstrumentRepository.cs" />
     <Compile Include="DataManagment\ILaboratotyRepository.cs" />
-    <Compile Include="DataManagment\IModelRepository.cs" />
+    <Compile Include="DataManagment\IModel3DRepository.cs" />
     <Compile Include="DataManagment\IRepositoryManager.cs" />
     <Compile Include="DataManagment\MongoElementRepository.cs" />
     <Compile Include="DataManagment\MongoInstrumentRepository.cs" />
     <Compile Include="DataManagment\MongoLaboratotyRepository.cs" />
-    <Compile Include="DataManagment\MongoModelRepository.cs" />
+    <Compile Include="DataManagment\Mongo3DModelRepository.cs" />
     <Compile Include="DataManagment\MongoRepositoryManager.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Model3D.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -273,7 +274,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

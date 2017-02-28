@@ -14,7 +14,7 @@ namespace CoSyLa.DataManagment
 		  MongoLaboratotyRepository _LaboratotyRepository;
 		  MongoInstrumentRepository _InstrumentRepository;
 		  MongoElementRepository    _ElementRepository;
-		  MongoModelRepository      _ModelRepository;
+		  Mongo3DModelRepository    _ModelRepository;
 
 		  public ILaboratotyRepository laboratotyRepository 
 		  { 
@@ -38,7 +38,7 @@ namespace CoSyLa.DataManagment
 				}
 		  }
 
-		  public IModelRepository modelRepository
+		  public IModel3DRepository modelRepository
 		  {
 				get
 				{
@@ -54,7 +54,7 @@ namespace CoSyLa.DataManagment
 				_LaboratotyRepository = new MongoLaboratotyRepository (_Client);
 				_InstrumentRepository = new MongoInstrumentRepository (_Client);
 				_ElementRepository    = new MongoElementRepository    (_Client);
-				_ModelRepository      = new MongoModelRepository      (_Client);
+				_ModelRepository      = new Mongo3DModelRepository    (_Client);
 		  }
 	 }
 }
