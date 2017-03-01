@@ -8,18 +8,17 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace CoSyLa.Models
 {
-	 public class VisualElement
+	 public class VirtualLabolatory
 	 {
-		  // Start duplicate section
 		  [BsonId]
 		  public ObjectId Id { get; set; }
 
 		  public DescriptionElement Description { get; set; }
 
-		  public int IdTypeElement    { get; set; }
-		  public int IdSubTypeElement { get; set; }
+		  public ObjectId LocationInstruments { get; set; }
+		  public ObjectId FileOfTheory { get; set; }
 
-		  public List<ObjectId> Models3D { get; set; }
-		  public List<ObjectId> KeyFrameValues { get; set; }
+		  // Instrument setting and main symulation parametr (file or json or string in key-value format ?)
+		  public string SymulationSetting { get; set; }
 	 }
 }

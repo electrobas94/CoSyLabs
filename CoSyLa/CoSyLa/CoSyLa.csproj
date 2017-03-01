@@ -207,8 +207,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DescriptionElement.cs" />
     <Compile Include="Models\LocationData.cs" />
     <Compile Include="Models\VirtuaInstrument.cs" />
+    <Compile Include="Models\VirtualLabolatory.cs" />
     <Compile Include="Models\VisualElement.cs" />
     <Compile Include="Models\Model3D.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
