@@ -41,6 +41,7 @@ var InstrumentEditor = (function () {
         w.AddChildWidget(canvas);
         this.w.Height = 100;
         blend4WebEngine.Init();
+        toolBar.AddToolGroup(new TransformMenu());
     }
     return InstrumentEditor;
 }());

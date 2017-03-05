@@ -16,6 +16,7 @@
     "./Widgets/ButtonWidget.ts",
     "./Widgets/ButtonGroupWidget.ts",
     "./Widgets/ItemListWidget.ts",
-    "./Widgets/ToolBarWidget.ts"
+    "./Widgets/ToolBarWidget.ts",
+	 "./InstrumentEditor/TransformMenu.ts"
   ]
 }

@@ -288,6 +288,7 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\App\InstrumentEditor\InstrumentEditor.ts" />
+    <TypeScriptCompile Include="Scripts\App\InstrumentEditor\TransformMenu.ts" />
     <TypeScriptCompile Include="Scripts\App\JSScriptAdapter.ts" />
     <TypeScriptCompile Include="Scripts\App\Render3D\Blend4Web.ts" />
     <TypeScriptCompile Include="Scripts\App\Widgets\ButtonGroupWidget.ts" />

@@ -17,7 +17,7 @@ namespace CoSyLa.DataManagment
 		  }
 		  public MongoInstrumentRepository(IMongoDatabase mongoClient)
 		  {
-				_Client = mongoClient;
+				//_Client = mongoClient;
 		  }
 	 }
 }

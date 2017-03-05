@@ -18,7 +18,7 @@ namespace CoSyLa.DataManagment
 		  }
 		  public Mongo3DModelRepository(IMongoDatabase mongoClient)
 		  {
-				_Client = mongoClient;
+				//_Client = mongoClient;
 		  }
 	 }
 }

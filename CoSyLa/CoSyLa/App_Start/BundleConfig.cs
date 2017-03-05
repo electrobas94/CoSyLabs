@@ -33,7 +33,9 @@ namespace CoSyLa
 					 "~/Scripts/App/Widgets/ButtonGroupWidget.js",
 					 "~/Scripts/App/Widgets/ToolBarWidget.js",
 					 "~/Scripts/App/Widgets/ItemListWidget.js",
-					 "~/Scripts/App/InstrumentEditor/InstrumentEditor.js"));
+					 "~/Scripts/App/InstrumentEditor/TransformMenu.js",
+					 "~/Scripts/App/InstrumentEditor/InstrumentEditor.js"
+					 ));
 
 				bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
