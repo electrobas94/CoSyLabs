@@ -17,6 +17,7 @@ var Widget = (function () {
         this._horizontalMeasureUnits = "%";
         this._lastEvent = null;
         this._onClick = function () { };
+        this._MouseMove = function () { };
         this._elementDom = this.Draw();
         this.InitWidget();
         if (parent)
@@ -24,6 +25,11 @@ var Widget = (function () {
         this._elementDom.addEventListener("click", function (event) {
             _this._lastEvent = event;
             _this._onClick();
+            _this._lastEvent = null;
+        });
+        this._elementDom.addEventListener("mousemove", function (event) {
+            _this._lastEvent = event;
+            _this._MouseMove();
             _this._lastEvent = null;
         });
     }
@@ -90,6 +96,13 @@ var Widget = (function () {
         enumerable: true,
         configurable: true
     });
+    Object.defineProperty(Widget.prototype, "LastEvent", {
+        get: function () {
+            return this._lastEvent;
+        },
+        enumerable: true,
+        configurable: true
+    });
     Object.defineProperty(Widget.prototype, "VerticalSizePolice", {
         set: function (sizePolice) {
             switch (sizePolice) {
@@ -150,6 +163,13 @@ var Widget = (function () {
     Object.defineProperty(Widget.prototype, "OnClick", {
         set: function (clickMethod) {
             this._onClick = clickMethod;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Widget.prototype, "MouseMove", {
+        set: function (clickMethod) {
+            this._MouseMove = clickMethod;
         },
         enumerable: true,
         configurable: true

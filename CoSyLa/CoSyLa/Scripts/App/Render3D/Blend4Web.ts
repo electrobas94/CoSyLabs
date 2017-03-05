@@ -19,7 +19,27 @@ class Blend4Web {
 	 protected _Preloader: any;
 	 protected _Physics: any;
 	 protected _Utilities: any;
-	 
+
+	 protected _SelectedObjects: any;
+
+	 TrySelectObjectInScene(x: number, y: number): void
+	 {
+		  if (this._SelectedObjects) {
+				this._Scenes.clear_outline_anim(this._SelectedObjects);
+				this._Transform.rotate_x_local(this._SelectedObjects, 0.01);
+		  }
+
+		  this._SelectedObjects = this._Scenes.pick_object(x, y);
+
+		  
+	 }
+
+	 rotateLol(x: number): void
+	 {
+		  if (this._SelectedObjects) {
+				this._Transform.rotate_x_local(this._SelectedObjects, x/1000.0);
+		  }
+	 }
 
 	 Init()
 	 {
@@ -34,7 +54,7 @@ class Blend4Web {
 				alpha: false,
 				//assets_dds_available: !DEBUG,
 				//assets_min50_available: !DEBUG,
-				background_color: [1.0, 1.0, 1.0, 0.0]
+				background_color: [0.6, 0.6, 0.6, 0.0]
 		  });
 	 }
 

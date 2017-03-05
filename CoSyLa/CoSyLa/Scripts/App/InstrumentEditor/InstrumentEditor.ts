@@ -1,6 +1,7 @@
 ﻿class InstrumentEditor
 {
 	 w: TabWidget;
+	 x: number = 0;
     constructor()
 	 {
 
@@ -57,12 +58,26 @@
 		  canvas.DomElement.style.backgroundColor = "#c5c5c5";
 		  w.AddChildWidget(canvas);
 
+		  canvas.OnClick = () => {
+				let x = (<MouseEvent>canvas.LastEvent).clientX;
+				let y = (<MouseEvent>canvas.LastEvent).clientY;
+				blend4WebEngine.TrySelectObjectInScene(x, y);
+		  };
+
+		  canvas.MouseMove = () => {
+				let a = <MouseEvent>canvas.LastEvent;
+					  blend4WebEngine.rotateLol(this.x - <number>a.clientY  );
+					  this.x = <number>a.clientY ;
+		  };
+
 		  this.w.Height = 100;
 
 		  blend4WebEngine.Init();
 
 		  toolBar.AddToolGroup(new TransformMenu() );
     }
+
+	
 }
 
 let instrumentEditor: InstrumentEditor = new InstrumentEditor();

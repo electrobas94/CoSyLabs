@@ -6,6 +6,18 @@ var __extends = (this && this.__extends) || function (d, b) {
 var Blend4Web = (function () {
     function Blend4Web() {
     }
+    Blend4Web.prototype.TrySelectObjectInScene = function (x, y) {
+        if (this._SelectedObjects) {
+            this._Scenes.clear_outline_anim(this._SelectedObjects);
+            this._Transform.rotate_x_local(this._SelectedObjects, 0.01);
+        }
+        this._SelectedObjects = this._Scenes.pick_object(x, y);
+    };
+    Blend4Web.prototype.rotateLol = function (x) {
+        if (this._SelectedObjects) {
+            this._Transform.rotate_x_local(this._SelectedObjects, x / 1000.0);
+        }
+    };
     Blend4Web.prototype.Init = function () {
         var _this = this;
         if (!this.CheckLoadModules())
@@ -15,7 +27,7 @@ var Blend4Web = (function () {
             callback: function (canvasElement, isSuccess) { _this.CanvasInit(canvasElement, isSuccess); },
             physics_enabled: true,
             alpha: false,
-            background_color: [1.0, 1.0, 1.0, 0.0]
+            background_color: [0.6, 0.6, 0.6, 0.0]
         });
     };
     Blend4Web.prototype.CanvasInit = function (canvasElement, isSuccess) {

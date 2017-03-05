@@ -26,8 +26,9 @@ class Widget
 	 //
 	 // Action-properties
 	 //
-	 private _lastEvent: Event  = null;
-	 private _onClick: Function = () => {};
+	 private _lastEvent: Event = null;
+	 private _onClick: Function = () => { };
+	 private _MouseMove: Function = () => { };
 
 	 //
 	 // Public methods
@@ -45,6 +46,13 @@ class Widget
 														  this._lastEvent = event;
 														  this._onClick();
 														  this._lastEvent = null; });
+
+		  this._elementDom.addEventListener("mousemove",
+				(event: Event) => {
+														  this._lastEvent = event;
+														  this._MouseMove();
+														  this._lastEvent = null;
+				});
 	 }
 
 	 AddClassStyle(className: string): void
@@ -100,6 +108,10 @@ class Widget
 		  return this._width;
 	 }
 
+	 get LastEvent(): Event {
+		  return this._lastEvent;
+	 }
+
 	 //
 	 // Setters
 	 //
@@ -153,6 +165,10 @@ class Widget
 
 	 set OnClick(clickMethod: Function) {
 		  this._onClick = clickMethod;
+	 }
+
+	 set MouseMove(clickMethod: Function) {
+		  this._MouseMove = clickMethod;
 	 }
 
 	 protected InitWidget(): void
