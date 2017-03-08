@@ -33,6 +33,9 @@ var Widget = (function () {
             _this._lastEvent = null;
         });
     }
+    Widget.prototype.AddEventHandler = function (eventName, handler) {
+        this._elementDom.addEventListener(eventName, handler);
+    };
     Widget.prototype.AddClassStyle = function (className) {
         this.DomElement.classList.add(className);
     };

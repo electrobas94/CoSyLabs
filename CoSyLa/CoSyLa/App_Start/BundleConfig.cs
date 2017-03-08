@@ -24,8 +24,8 @@ namespace CoSyLa
                       "~/Scripts/respond.js"));
 
 				bundles.Add(new ScriptBundle("~/bundles/app").Include(
-					 "~/Scripts/b4w.min.js",
-					 "~/Scripts/App/Render3d/Blend4Web.js",
+					 "~/Scripts/App/Render3D/Blend4Web/b4w.js",
+					 "~/Scripts/App/Render3D/Blend4Web.js",
 					 "~/Scripts/App/Widgets/Widget.js",
 					 "~/Scripts/App/Widgets/MainWidget.js",
 					 "~/Scripts/App/Widgets/TabWidget.js", 
@@ -34,6 +34,7 @@ namespace CoSyLa
 					 "~/Scripts/App/Widgets/ToolBarWidget.js",
 					 "~/Scripts/App/Widgets/ItemListWidget.js",
 					 "~/Scripts/App/InstrumentEditor/TransformMenu.js",
+					 "~/Scripts/App/Render3D/CameraControl.js",
 					 "~/Scripts/App/InstrumentEditor/InstrumentEditor.js"
 					 ));
 

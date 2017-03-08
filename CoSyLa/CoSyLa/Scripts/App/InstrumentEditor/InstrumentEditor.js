@@ -1,6 +1,5 @@
 var InstrumentEditor = (function () {
     function InstrumentEditor() {
-        var _this = this;
         this.x = 0;
         var mainWindow = new MainWidget();
         this.w = new TabWidget(mainWindow);
@@ -41,16 +40,6 @@ var InstrumentEditor = (function () {
         canvas.Height = 95;
         canvas.DomElement.style.backgroundColor = "#c5c5c5";
         w.AddChildWidget(canvas);
-        canvas.OnClick = function () {
-            var x = canvas.LastEvent.clientX;
-            var y = canvas.LastEvent.clientY;
-            blend4WebEngine.TrySelectObjectInScene(x, y);
-        };
-        canvas.MouseMove = function () {
-            var a = canvas.LastEvent;
-            blend4WebEngine.rotateLol(_this.x - a.clientY);
-            _this.x = a.clientY;
-        };
         this.w.Height = 100;
         blend4WebEngine.Init();
         toolBar.AddToolGroup(new TransformMenu());

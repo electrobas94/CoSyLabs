@@ -226,7 +226,56 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
-    <Content Include="Scripts\b4w.min.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\anchors.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\animation.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\armature.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\assets.js" />
+    <TypeScriptCompile Include="Scripts\App\Render3D\Blend4Web\b4w.ts" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\batch.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\boundings.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\camera.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\compat.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\config.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\constraints.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\container.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\controls.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\curve.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\data.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\debug.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\extensions.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\geometry.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\graph.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\hud.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\input.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\ipc.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\lights.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\loader.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\logic_nodes.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\math.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\navmesh.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\nla.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\nodemat.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\objects.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\obj_util.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\particles.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\physics.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\prerender.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\primitives.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\print.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\reformer.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\renderer.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\scenegraph.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\scenes.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\sfx.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\shaders.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\subscene.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\texcomp.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\textures.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\time.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\transform.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\tsr.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\util.js" />
+    <Content Include="Scripts\App\Render3D\Blend4Web\version.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -255,8 +304,6 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
-    <Content Include="Scripts\respond.min.js" />
-    <Content Include="Scripts\uranium.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -273,9 +320,6 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\InstrumentEditor\Index.cshtml" />
-    <Content Include="Scripts\uranium_mem.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -291,6 +335,7 @@
     <TypeScriptCompile Include="Scripts\App\InstrumentEditor\TransformMenu.ts" />
     <TypeScriptCompile Include="Scripts\App\JSScriptAdapter.ts" />
     <TypeScriptCompile Include="Scripts\App\Render3D\Blend4Web.ts" />
+    <TypeScriptCompile Include="Scripts\App\Render3D\CameraControl.ts" />
     <TypeScriptCompile Include="Scripts\App\Widgets\ButtonGroupWidget.ts" />
     <TypeScriptCompile Include="Scripts\App\Widgets\ButtonWidget.ts" />
     <TypeScriptCompile Include="Scripts\App\Widgets\ItemListWidget.ts" />

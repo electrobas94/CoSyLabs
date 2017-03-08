@@ -8,7 +8,8 @@
     "sourceMap": false
   },
   "files": [
-    "./Render3d/Blend4Web.ts",
+	 "./Render3D/Blend4Web/b4w.ts",
+    "./Render3D/Blend4Web.ts",
     "./InstrumentEditor/InstrumentEditor.ts",
     "./Widgets/Widget.ts",
     "./Widgets/MainWidget.ts",
@@ -17,6 +18,7 @@
     "./Widgets/ButtonGroupWidget.ts",
     "./Widgets/ItemListWidget.ts",
     "./Widgets/ToolBarWidget.ts",
-	 "./InstrumentEditor/TransformMenu.ts"
+    "./Render3D/CameraControl.ts",
+    "./InstrumentEditor/TransformMenu.ts"
   ]
 }

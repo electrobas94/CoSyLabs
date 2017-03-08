@@ -55,6 +55,11 @@ class Widget
 				});
 	 }
 
+	 AddEventHandler( eventName: string, handler: any ): void
+	 {
+		  this._elementDom.addEventListener( eventName, handler );
+	 }
+
 	 AddClassStyle(className: string): void
 	 {
 		  this.DomElement.classList.add(className);

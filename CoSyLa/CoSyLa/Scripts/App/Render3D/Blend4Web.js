@@ -6,12 +6,40 @@ var __extends = (this && this.__extends) || function (d, b) {
 var Blend4Web = (function () {
     function Blend4Web() {
     }
+    Object.defineProperty(Blend4Web.prototype, "CameraManager", {
+        get: function () {
+            return this._CameraManager;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Blend4Web.prototype, "SceneManager", {
+        get: function () {
+            return this._SceneManager;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Blend4Web.prototype, "TransformManager", {
+        get: function () {
+            return this._Transform;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Blend4Web.prototype, "ApplicationManager", {
+        get: function () {
+            return this._Appliction;
+        },
+        enumerable: true,
+        configurable: true
+    });
     Blend4Web.prototype.TrySelectObjectInScene = function (x, y) {
         if (this._SelectedObjects) {
-            this._Scenes.clear_outline_anim(this._SelectedObjects);
+            this._SceneManager.clear_outline_anim(this._SelectedObjects);
             this._Transform.rotate_x_local(this._SelectedObjects, 0.01);
         }
-        this._SelectedObjects = this._Scenes.pick_object(x, y);
+        this._SelectedObjects = this._SceneManager.pick_object(x, y);
     };
     Blend4Web.prototype.rotateLol = function (x) {
         if (this._SelectedObjects) {
@@ -25,7 +53,7 @@ var Blend4Web = (function () {
         this._Appliction.init({
             canvas_container_id: "main_canvas_container",
             callback: function (canvasElement, isSuccess) { _this.CanvasInit(canvasElement, isSuccess); },
-            physics_enabled: true,
+            physics_enabled: false,
             alpha: false,
             background_color: [0.6, 0.6, 0.6, 0.0]
         });
@@ -54,7 +82,7 @@ var Blend4Web = (function () {
             console.log("Blend4Web module 'geometry' is not loaded!");
             isAllModuleLoad = false;
         }
-        if (!this._Scenes) {
+        if (!this._SceneManager) {
             console.log("Blend4Web module 'scenes' is not loaded!");
             isAllModuleLoad = false;
         }
@@ -74,12 +102,12 @@ b4w.register("Render3d", function (exports, require) {
             this._Appliction = require("app");
             this._Data = require("data");
             this._Geometry = require("geometry");
-            this._Scenes = require("scenes");
+            this._SceneManager = require("scenes");
             this._Objects = require("objects");
             this._Transform = require("transform");
             this._Config = require("config");
             this._Version = require("version");
-            this._Camera = require("camera");
+            this._CameraManager = require("camera");
             this._Container = require("container");
             this._Controls = require("controls");
             this._Mouse = require("mouse");

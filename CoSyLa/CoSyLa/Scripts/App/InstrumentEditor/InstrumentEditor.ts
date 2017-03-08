@@ -58,6 +58,7 @@
 		  canvas.DomElement.style.backgroundColor = "#c5c5c5";
 		  w.AddChildWidget(canvas);
 
+		  /*
 		  canvas.OnClick = () => {
 				let x = (<MouseEvent>canvas.LastEvent).clientX;
 				let y = (<MouseEvent>canvas.LastEvent).clientY;
@@ -68,13 +69,16 @@
 				let a = <MouseEvent>canvas.LastEvent;
 					  blend4WebEngine.rotateLol(this.x - <number>a.clientY  );
 					  this.x = <number>a.clientY ;
-		  };
+		  };*/
 
 		  this.w.Height = 100;
 
 		  blend4WebEngine.Init();
+		  //blend4WebEngine.ApplicationManager.enable_camera_controls();
 
-		  toolBar.AddToolGroup(new TransformMenu() );
+		  toolBar.AddToolGroup(new TransformMenu());
+
+		  //let camContr = new CameraControl(canvas);
     }
 
 	
