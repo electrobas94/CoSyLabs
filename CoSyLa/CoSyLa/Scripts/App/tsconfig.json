@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": false
+  },
+  "files": [
+	 "./Render3D/Blend4Web/b4w.ts",
+    "./Render3D/Blend4Web.ts",
+    "./InstrumentEditor/InstrumentEditor.ts",
+    "./Widgets/Widget.ts",
+    "./Widgets/MainWidget.ts",
+    "./Widgets/TabWidget.ts",
+    "./Widgets/ButtonWidget.ts",
+    "./Widgets/ButtonGroupWidget.ts",
+    "./Widgets/ItemListWidget.ts",
+    "./Widgets/ToolBarWidget.ts",
+    "./Render3D/CameraControl.ts",
+    "./InstrumentEditor/TransformMenu.ts"
+  ]
+}
